@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\DHT11.obj",
+".\Objects\lcd.obj",
+".\Objects\Usart1.obj" 
+TO ".\Objects\BluetoothData" 
+PRINT(".\Listings\BluetoothData.m51") RAMSIZE(256) 

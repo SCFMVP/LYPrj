@@ -1,0 +1,57 @@
+C51 COMPILER V9.55   USART1                                                                05/02/2020 00:22:13 PAGE 1   
+
+
+C51 COMPILER V9.55, COMPILATION OF MODULE USART1
+OBJECT MODULE PLACED IN .\Objects\Usart1.obj
+COMPILER INVOKED BY: d:\Keil_v5_all\C51\BIN\C51.EXE Usart1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\Usart1.lst) OBJECT(.\Objects\Usart1.obj)
+
+line level    source
+
+   1          /**
+   2          * Author: Later
+   3          * Time: 2020/5/1 18:54
+   4          * Info: LCD1602Driver
+   5          * Change:
+   6          **/
+   7          #include "Usart1.h"
+   8          
+   9          void InitUART1()
+  10          {
+  11   1              TMOD = 0x20;
+  12   1          SCON = 0x50;
+  13   1          TH1 = 0xFA;   //9600
+  14   1          TL1 = TH1;
+  15   1          PCON = 0x80;
+  16   1          TR1 = 1;
+  17   1      }
+  18          /*发送一个字节*/
+  19          void SendOneByte(uchar c)
+  20          {
+  21   1          SBUF = c;
+  22   1          while(!TI);
+  23   1          TI = 0;
+  24   1      }
+  25          /*发送一个字符串*/
+  26          void send_string(uchar *p)
+  27          {
+  28   1              while(*p!= '\0')
+  29   1              {
+  30   2                      SendOneByte(*p);
+  31   2                      p++;
+  32   2              }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
