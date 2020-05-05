@@ -2,6 +2,8 @@
 ".\Objects\main.obj",
 ".\Objects\DHT11.obj",
 ".\Objects\lcd.obj",
-".\Objects\Usart1.obj" 
+".\Objects\Usart1.obj",
+".\Objects\ADC0809.obj",
+".\Objects\delay.obj" 
 TO ".\Objects\BluetoothData" 
 PRINT(".\Listings\BluetoothData.m51") RAMSIZE(256) 

@@ -23,10 +23,10 @@
 /**********************************
 PIN口定义
 **********************************/
-#define LCD1602_DATAPINS P0
-sbit LCD1602_E=P2^7;
-sbit LCD1602_RW=P2^5;
-sbit LCD1602_RS=P2^6;
+#define LCD1602_DATAPINS P2
+sbit LCD1602_E=P0^5;
+sbit LCD1602_RW=P0^6;
+sbit LCD1602_RS=P0^7;
 
 /**********************************
 函数声明

@@ -1,4 +1,4 @@
-C51 COMPILER V9.55   LCD                                                                   05/02/2020 00:22:13 PAGE 1   
+C51 COMPILER V9.55   LCD                                                                   05/05/2020 21:03:30 PAGE 1   
 
 
 C51 COMPILER V9.55, COMPILATION OF MODULE LCD
@@ -62,7 +62,7 @@ line level    source
               {
                       LCD1602_E = 0;   //使能清零
                       LCD1602_RS = 0;  //选择写入命令
-C51 COMPILER V9.55   LCD                                                                   05/02/2020 00:22:13 PAGE 2   
+C51 COMPILER V9.55   LCD                                                                   05/05/2020 21:03:30 PAGE 2   
 
                       LCD1602_RW = 0;  //选择写入
               
@@ -126,7 +126,7 @@ line level    source
  114          /*******************************************************************************
  115          * 函 数 名       : LcdInit()
  116          * 函数功能               : 初始化LCD屏
-C51 COMPILER V9.55   LCD                                                                   05/02/2020 00:22:13 PAGE 3   
+C51 COMPILER V9.55   LCD                                                                   05/05/2020 21:03:30 PAGE 3   
 
  117          * 输    入       : 无
  118          * 输    出       : 无

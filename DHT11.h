@@ -14,7 +14,7 @@
 #define uint unsigned int
 #endif
 
-sbit Data=P2^0;   //定义数据线
+sbit Data=P3^3;   //定义数据线
 extern uchar rec_dat[9];   //用于显示的接收数据数组
 
 void DHT11_delay_us(uchar n);
