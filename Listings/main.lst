@@ -1,4 +1,4 @@
-C51 COMPILER V9.55   MAIN                                                                  05/06/2020 20:20:15 PAGE 1   
+C51 COMPILER V9.55   MAIN                                                                  06/06/2020 21:09:49 PAGE 1   
 
 
 C51 COMPILER V9.55, COMPILATION OF MODULE MAIN
@@ -31,7 +31,7 @@ line level    source
               #define uint unsigned int
               #endif
   23          
-  24          uchar bluetooth[13];
+  24          uchar bluetooth[14];
   25          uchar code CDIS1[14]={"BlueTooth Data"};
   26          
   27          void main()
@@ -62,7 +62,7 @@ line level    source
   52   3                      }
   53   2                      LcdWriteCom(0x80+0x40);
   54   2                      for(i=0;i<9;i++)
-C51 COMPILER V9.55   MAIN                                                                  05/06/2020 20:20:15 PAGE 2   
+C51 COMPILER V9.55   MAIN                                                                  06/06/2020 21:09:49 PAGE 2   
 
   55   2                      {
   56   3                              LcdWriteData(rec_dat[i]);               
@@ -77,57 +77,60 @@ line level    source
   65   3                      }
   66   2                      LcdWriteData('L');      
   67   2                      LcdWriteData('u');      
-  68   2                      
+  68   2                      //LcdWriteData('x');    
   69   2                      
-  70   2                      bluetooth[0]='#';
-  71   2                      bluetooth[1]=' ';
-  72   2                      bluetooth[2]=rec_dat[0];
-  73   2                      bluetooth[3]=rec_dat[1];
-  74   2                      bluetooth[4]=' ';
-  75   2                      bluetooth[5]=rec_dat[6];
-  76   2                      bluetooth[6]=rec_dat[7];
-  77   2                      bluetooth[7]=' ';
-  78   2                      bluetooth[8]=light[0];
-  79   2                      bluetooth[9]=light[1];
-  80   2                      bluetooth[10]=light[2];
-  81   2                      bluetooth[11]=' ';
-  82   2                      bluetooth[12]='*';
-  83   2                      
-  84   2                      /*串口蓝牙发送数据*/
-  85   2                      send_string(bluetooth);
-  86   2                      send_string("\r\n");
-  87   2                      delayms(20);            //80MS
-  88   2              
-  89   2              }
-  90   1      }
-  91          
-  92          /*
-  93          ************************************************************
-  94          *       函数名称：      t0
-  95          *
-  96          *       函数功能：      t0中断回调
-  97          *
-  98          *       入口参数：      
-  99          *
- 100          *       返回参数：      
- 101          *
- 102          *       说明：          ADC时钟 
- 103          ************************************************************
- 104          */  
- 105          void t0(void) interrupt 1 using 0 
- 106          {  
- 107   1         CLK=~CLK; 
- 108   1      } 
+  70   2                      
+  71   2                      bluetooth[0]='#';
+  72   2                      bluetooth[1]=' ';
+  73   2                      bluetooth[2]=rec_dat[0];
+  74   2                      bluetooth[3]=rec_dat[1];
+  75   2                      bluetooth[4]=' ';
+  76   2                      bluetooth[5]=rec_dat[6];
+  77   2                      bluetooth[6]=rec_dat[7];
+  78   2                      bluetooth[7]=' ';
+  79   2                      bluetooth[8]=light[0];
+  80   2                      bluetooth[9]=light[1];
+  81   2                      bluetooth[10]=light[2];
+  82   2                      bluetooth[11]=' ';
+  83   2                      bluetooth[12]='*';
+  84   2                      bluetooth[13]='\0';   //结尾符,必须要有
+  85   2                      
+  86   2                      /*串口蓝牙发送数据*/
+  87   2                      send_string(bluetooth);
+  88   2                      send_string("\r\n");
+  89   2                      delayms(20);            //80MS
+  90   2      
+  91   2              
+  92   2              }
+  93   1      }
+  94          
+  95          /*
+  96          ************************************************************
+  97          *       函数名称：      t0
+  98          *
+  99          *       函数功能：      t0中断回调
+ 100          *
+ 101          *       入口参数：      
+ 102          *
+ 103          *       返回参数：      
+ 104          *
+ 105          *       说明：          ADC时钟 
+ 106          ************************************************************
+ 107          */  
+ 108          void t0(void) interrupt 1 using 0 
+ 109          {  
+ 110   1         CLK=~CLK; 
+ 111   1      } 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    210    ----
+   CODE SIZE        =    212    ----
    CONSTANT SIZE    =     17    ----
+C51 COMPILER V9.55   MAIN                                                                  06/06/2020 21:09:49 PAGE 3   
+
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     13       1
-C51 COMPILER V9.55   MAIN                                                                  05/06/2020 20:20:15 PAGE 3   
-
+   DATA SIZE        =     14       1
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

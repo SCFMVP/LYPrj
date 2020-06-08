@@ -21,7 +21,7 @@
 #define uint unsigned int
 #endif
 
-uchar bluetooth[13];
+uchar bluetooth[14];
 uchar code CDIS1[14]={"BlueTooth Data"};
 
 void main()
@@ -65,6 +65,7 @@ void main()
 		}
 		LcdWriteData('L');	
 		LcdWriteData('u');	
+		//LcdWriteData('x');	
 		
 		
 		bluetooth[0]='#';
@@ -80,11 +81,13 @@ void main()
 		bluetooth[10]=light[2];
 		bluetooth[11]=' ';
 		bluetooth[12]='*';
+		bluetooth[13]='\0';   //结尾符,必须要有
 		
 		/*串口蓝牙发送数据*/
 		send_string(bluetooth);
 		send_string("\r\n");
 		delayms(20);		//80MS
+
 	
 	}
 }
